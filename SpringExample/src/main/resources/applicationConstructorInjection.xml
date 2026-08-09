@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="mySpecification" class="car.example.injection.constructor.Specification">
+        <property name="make" value="Toyota"></property>
+        <property name="model" value="Camry"></property>
+    </bean>
+    <bean id="myCar" class="car.example.injection.constructor.Car">
+        <!--Constructor Injection-->
+        <constructor-arg ref="mySpecification"></constructor-arg>
+    </bean>
+</beans>
